@@ -15,5 +15,5 @@ En la clase Cache -> la propiedad apikey, ahí pegar tu API KEY de DeepL
 Es necesario que generes un archivo de tipo ADDIN, en caso no sepas hacerlo:
 Visit https://thebuildingcoder.typepad.com/blog/2010/04/addin-manifest-and-guidize.html
 
- 
 
+![WhatsApp Video 2024-08-23 at 7](https://github.com/user-attachments/assets/47d19928-b4c8-4a93-9164-aeeabfcfa094)
