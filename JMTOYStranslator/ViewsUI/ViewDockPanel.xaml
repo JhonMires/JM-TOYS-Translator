@@ -1,0 +1,167 @@
+﻿<Page
+    x:Class="JMTOYStranslator.ViewsUI.ViewDockPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:JMTOYStranslator.ViewsUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="343"
+    Height="483"
+    Background="White"
+    mc:Ignorable="d">
+
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Vertical">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition Height="8" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.Column="0"
+                    FontWeight="Bold"
+                    Text="Idioma base" />
+                <TextBlock
+                    Grid.Column="2"
+                    FontWeight="Bold"
+                    Text="Idioma nuevo" />
+                <ComboBox
+                    Name="boxLenguajeMain"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    DisplayMemberPath="name"
+                    SelectedValuePath="code"
+                    SelectionChanged="BoxLenguajeMain_OnSelectionChanged" />
+                <ComboBox
+                    Name="boxLenguajeSecond"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    DisplayMemberPath="name"
+                    SelectedValuePath="code"
+                    SelectionChanged="BoxLenguajeSecond_OnSelectionChanged" />
+
+                <TextBox
+                    Name="textApiKey"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="3"
+                    Height="27"
+                    Text="" />
+
+            </Grid>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+
+                <CheckBox
+                    Name="autoUpdate"
+                    Grid.Column="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Content="Auto update"
+                    IsChecked="True" />
+
+                <Button
+                    Name="btnAppli"
+                    Grid.Column="1"
+                    Width="60"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Click="BtnAppli_OnClick"
+                    Content="Refresh" />
+                <Button
+                    Name="btnSelects"
+                    Grid.Column="2"
+                    Width="60"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Click="BtnSelects_OnClick"
+                    Content="Selects"
+                    ToolTip="Traducir elementos seleccionados." />
+
+                <Button
+                    Name="btnAlls"
+                    Grid.Column="3"
+                    Width="60"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Click="BtnAlls_OnClick"
+                    Content="All"
+                    ToolTip="Traducir todos los elementos" />
+            </Grid>
+        </StackPanel>
+
+
+        <ListView
+            Name="ViewData"
+            Grid.Row="2"
+            Background="Transparent"
+            BorderBrush="Transparent"
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
+            SelectionMode="Extended">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="1">
+                                <TextBlock
+                                    FontSize="12"
+                                    FontWeight="Bold"
+                                    Text="{Binding Content}"
+                                    ToolTip="{Binding Element.Id.Value}" />
+                                <TextBlock
+                                    Margin="0,5,0,0"
+                                    FontSize="10"
+                                    FontStyle="Italic"
+                                    Foreground="DimGray"
+                                    Text="{Binding Translate}" />
+                                <TextBlock
+                                    Margin="0,5,0,10"
+                                    Foreground="Gray"
+                                    Text="{Binding Tipo}" />
+                            </StackPanel>
+                            <Button
+                                Name="BtnItemsList"
+                                Grid.Column="0"
+                                Height="40"
+                                Margin="0,0,10,0"
+                                Click="ButtonBase_OnClick"
+                                ToolTip="Traducir solo este elemento" />
+                        </Grid>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
