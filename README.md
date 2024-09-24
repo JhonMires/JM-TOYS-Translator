@@ -6,10 +6,6 @@
 
 JM-TOYS-Translator es una herramienta que permite generar traducciones utilizando la API de DeepL. Este proyecto está diseñado para ser usado con la API de Revit 2022, y está enfocado en mejorar la productividad dentro de entornos BIM.
 
-## ¡Únete a la Comunidad!
-
-Este proyecto es de código abierto y está abierto a contribuciones de la comunidad. ¡Cualquier funcionalidad que desees agregar es bienvenida! Además, si te apasiona la programación y la innovación en BIM, te invitamos a unirte al grupo más grande y mejor de programación e innovación en BIM en WhatsApp: [Únete aquí](https://chat.whatsapp.com/FGR6cGRrgLe9RtXQ5Gl4EE).
-
 Recuerda que también agradeceremos que le des un **like** al repositorio para apoyar el desarrollo de esta herramienta.
 
 ## Instalación
